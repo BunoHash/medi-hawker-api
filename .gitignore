@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+medi-hawker-backend/.vs/medi-hawker-backend/v16*
+*.cache
+medi-hawker-backend/medi-hawker-api/obj*
