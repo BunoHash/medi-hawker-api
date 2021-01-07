@@ -11,6 +11,7 @@ namespace medi_hawker_api
     {
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         { 
+            
         }
      }
 }
