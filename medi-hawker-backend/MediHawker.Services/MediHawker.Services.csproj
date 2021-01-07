@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediHawker.Data\MediHawker.Data.csproj" />
+    <ProjectReference Include="..\MediHawker.Repositories\MediHawker.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

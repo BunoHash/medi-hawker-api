@@ -34,3 +34,13 @@ medi-hawker-backend/.vs/medi-hawker-backend/v16*
 *.cache
 medi-hawker-backend/medi-hawker-api/obj*
 *.v2
+medi-hawker-backend/MediHawker.Utility/obj*
+medi-hawker-backend/MediHawker.Services/obj*
+medi-hawker-backend/MediHawker.Repositories/bin*
+medi-hawker-backend/MediHawker.Data/obj*
+medi-hawker-backend/MediHawker.Repositories/obj*
+medi-hawker-backend/MediHawker.Services/bin*
+medi-hawker-backend/MediHawker.Utility/bin*
+
+medi-hawker-backend/MediHawker.Data/bin*
+medi-hawker-backend/medi-hawker-api/bin*

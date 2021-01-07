@@ -1,9 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>medi_hawker_api</RootNamespace>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MediHawker.Data\MediHawker.Data.csproj" />
+    <ProjectReference Include="..\MediHawker.Services\MediHawker.Services.csproj" />
+  </ItemGroup>
 
 
 </Project>
