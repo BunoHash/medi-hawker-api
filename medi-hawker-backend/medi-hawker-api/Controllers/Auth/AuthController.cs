@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediHawker.Data;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace medi_hawker_api.Controllers.Auth
     public class AuthController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
 
+        
     }
 }
