@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace medi_hawker_api
+namespace MediHawkerAPI
 {
     public class Program
     {

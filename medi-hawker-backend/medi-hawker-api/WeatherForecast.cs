@@ -1,6 +1,6 @@
 using System;
 
-namespace medi_hawker_api
+namespace MediHawkerAPI
 {
     public class WeatherForecast
     {
