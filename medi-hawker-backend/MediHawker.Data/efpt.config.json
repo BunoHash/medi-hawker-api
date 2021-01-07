@@ -1,0 +1,48 @@
+﻿{
+   "ContextClassName": "MedihawkerDbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": null,
+   "ProjectRootNamespace": "MediHawker.Data",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[CON_CONSUMERS]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CON_CONSUMERS_DETAILS]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CON_CONSUMERS_PURCHASE_HISTORY]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CON_ORDER_DETAILS]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CON_ORDERS]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CON_PRODUCTS]",
+         "ObjectType": 0
+      }
+   ],
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseNodaTime": false,
+   "UseSpatial": false
+}

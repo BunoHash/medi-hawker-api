@@ -7,13 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediHawker.API", "medi-hawk
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class Libraries", "Class Libraries", "{AA34B3D7-ED58-4D01-B570-6AC2ECCA663B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediHawker.Services", "MediHawker.Services\MediHawker.Services.csproj", "{4890A40E-9200-4BD0-BEC8-FFB78FC708CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediHawker.Services", "MediHawker.Services\MediHawker.Services.csproj", "{4890A40E-9200-4BD0-BEC8-FFB78FC708CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediHawker.Repositories", "MediHawker.Repositories\MediHawker.Repositories.csproj", "{7A81A1C6-4922-4E91-BC2A-58EF331C1325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediHawker.Repositories", "MediHawker.Repositories\MediHawker.Repositories.csproj", "{7A81A1C6-4922-4E91-BC2A-58EF331C1325}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediHawker.Data", "MediHawker.Data\MediHawker.Data.csproj", "{7BD3A8ED-172F-4CF3-8C22-F9E11F5020E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediHawker.Data", "MediHawker.Data\MediHawker.Data.csproj", "{7BD3A8ED-172F-4CF3-8C22-F9E11F5020E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediHawker.Utility", "MediHawker.Utility\MediHawker.Utility.csproj", "{FF4481E3-42D9-4EEF-8DCD-4BCD41E302D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediHawker.Utility", "MediHawker.Utility\MediHawker.Utility.csproj", "{FF4481E3-42D9-4EEF-8DCD-4BCD41E302D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
