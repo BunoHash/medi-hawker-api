@@ -19,5 +19,11 @@ namespace MediHawker.Services.Consumer.Implementation
         {
             _consumerRepository.Save(conConsumser);
         }
+
+        public bool Update(ConConsumers conConsumser)
+        {
+            _consumerRepository.Update(conConsumser);
+            return true;
+        }
     }
 }

@@ -43,6 +43,14 @@ namespace medi_hawker_api.Controllers.Consumer
             this._consumerService.Save(conConsumser);
         }
 
+        [HttpPost]
+        [Route("updateRegisterConsumer")]
+        public void updateRegisterConsumer(ConConsumers conConsumser)
+        {
+            
+            this._consumerService.Update(conConsumser);
+        }
+
         // PUT api/<controller>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody]string value)

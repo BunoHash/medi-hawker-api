@@ -8,5 +8,6 @@ namespace MediHawker.Services.Consumer.Interface
     public interface IConsumerService
     {
         void Save(ConConsumers conConsumser);
+        bool Update(ConConsumers conConsumser);
     }
 }

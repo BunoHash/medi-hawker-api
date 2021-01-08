@@ -2,6 +2,7 @@
 using MediHawker.Repositories.Consumer.Interface;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MediHawker.Repositories.Consumer.Implementation
@@ -30,6 +31,30 @@ namespace MediHawker.Repositories.Consumer.Implementation
                 Console.WriteLine(ex);
             }
             
+        }
+
+        public bool Update(ConConsumers conConsumser)
+        {
+            try
+            {
+               var consumer  = _context.ConConsumers.FirstOrDefault(x => x.ConsumerId==conConsumser.ConsumerId);
+                if (consumer != null)
+                {
+                    consumer.CartItemCount = conConsumser.CartItemCount;
+                    consumer.Password = conConsumser.Password;
+                    consumer.Phone = conConsumser.Phone;
+                    consumer.UserName = conConsumser.UserName;
+
+                    return _context.SaveChanges() >0;
+                }
+
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+            return true;
         }
     }
 }

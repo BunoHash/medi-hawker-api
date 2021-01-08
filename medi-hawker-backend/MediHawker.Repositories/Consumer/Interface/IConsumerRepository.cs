@@ -8,5 +8,6 @@ namespace MediHawker.Repositories.Consumer.Interface
    public interface IConsumerRepository 
     {
         void Save(ConConsumers conConsumers);
+        bool Update(ConConsumers conConsumser);
     }
 }
