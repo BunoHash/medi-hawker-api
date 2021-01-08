@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 
-#nullable disable
 
 namespace MediHawker.Data
 {

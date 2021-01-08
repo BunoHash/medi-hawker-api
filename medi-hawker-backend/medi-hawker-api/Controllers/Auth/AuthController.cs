@@ -12,7 +12,7 @@ namespace medi_hawker_api.Controllers.Auth
     [Produces("application/json")]
     public class AuthController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
-
+        
         
     }
 }

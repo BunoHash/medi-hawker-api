@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using medi_hawker_api;
+using MediHawker.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,8 @@ namespace MediHawkerAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<MedihawkerDbContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("MediHawkerDB")));
             services.AddControllers();
 
             services.AddCors(opt =>
@@ -54,9 +58,9 @@ namespace MediHawkerAPI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+           // app.UseAuthorization();
 
-            app.UseSession();
+            //app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

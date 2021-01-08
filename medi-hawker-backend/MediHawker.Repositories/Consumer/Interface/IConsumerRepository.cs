@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MediHawker.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MediHawker.Repositories.Consumer.Interface
 {
-    interface IConsumerRepository
+   public interface IConsumerRepository 
     {
+        void Save(ConConsumers conConsumers);
     }
 }
