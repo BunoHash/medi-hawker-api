@@ -45,5 +45,31 @@ namespace medi_hawker_api.Controllers.Auth
             
 
         }
+
+        [HttpPost]
+        [Route("logout")]
+        public IActionResult Logout()
+        {
+            try
+            {
+                var loginResponse = _authService.Logout();
+                if (loginResponse)
+                {
+                    return Ok("Success");
+                }
+                else
+                {
+                    return BadRequest("Bad request");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+
+        }
     }
 }

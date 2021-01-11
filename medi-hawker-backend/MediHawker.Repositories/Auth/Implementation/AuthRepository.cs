@@ -37,5 +37,10 @@ namespace MediHawker.Repositories.Auth.Implementation
                 throw;
             }
         }
+
+        public bool Logout()
+        {
+            return true;
+        }
     }
 }

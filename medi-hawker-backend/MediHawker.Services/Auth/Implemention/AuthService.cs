@@ -20,5 +20,10 @@ namespace MediHawker.Services.Auth.Implemention
         {
             return _authRepository.Login(consumer);
         }
+
+        public bool Logout()
+        {
+            return _authRepository.Logout();
+        }
     }
 }
