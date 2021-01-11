@@ -6,8 +6,10 @@ using MediHawker.Services.Auth.Implemention;
 using MediHawker.Services.Auth.Interface;
 using MediHawker.Services.Consumer.Implementation;
 using MediHawker.Services.Consumer.Interface;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +28,21 @@ namespace medi_hawker_api
             //Repositories
             services.AddScoped<IConsumerRepository, ConsumerRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            //JWT Token Config
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+
+                    };
+                });
         }
      }
 }
