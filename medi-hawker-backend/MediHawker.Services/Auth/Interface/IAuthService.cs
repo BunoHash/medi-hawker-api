@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MediHawker.Data.Custom_Models;
 
 namespace MediHawker.Services.Auth.Interface
 {
-    interface IAuthService
+    public interface IAuthService
     {
+        bool Login(ConsumerInfoModel consumer);
     }
 }

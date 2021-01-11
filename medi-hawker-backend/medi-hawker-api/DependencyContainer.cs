@@ -1,5 +1,9 @@
-﻿using MediHawker.Repositories.Consumer.Implementation;
+﻿using MediHawker.Repositories.Auth.Implementation;
+using MediHawker.Repositories.Auth.Interface;
+using MediHawker.Repositories.Consumer.Implementation;
 using MediHawker.Repositories.Consumer.Interface;
+using MediHawker.Services.Auth.Implemention;
+using MediHawker.Services.Auth.Interface;
 using MediHawker.Services.Consumer.Implementation;
 using MediHawker.Services.Consumer.Interface;
 using Microsoft.Extensions.Configuration;
@@ -17,9 +21,11 @@ namespace medi_hawker_api
         {
             //Services
             services.AddScoped<IConsumerService, ConsumerService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             //Repositories
             services.AddScoped<IConsumerRepository, ConsumerRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
         }
      }
 }

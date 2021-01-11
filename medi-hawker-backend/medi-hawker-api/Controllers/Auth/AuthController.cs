@@ -1,4 +1,6 @@
 ﻿using MediHawker.Data;
+using MediHawker.Data.Custom_Models;
+using MediHawker.Services.Auth.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +14,36 @@ namespace medi_hawker_api.Controllers.Auth
     [Produces("application/json")]
     public class AuthController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
-        
-        
+        private readonly IAuthService _authService;
+
+        public AuthController(IAuthService authService)
+        {
+            _authService = authService;
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult LoginConsumer(ConsumerInfoModel consumer)
+        {
+            try
+            {
+               var loginResponse =  _authService.Login(consumer);
+                if (loginResponse)
+                {
+                    return Ok("Success");
+                }
+                else {
+                    return BadRequest("Invalid User");
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+            
+
+        }
     }
 }
