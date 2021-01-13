@@ -58,7 +58,7 @@ namespace MediHawkerAPI
 
             app.UseRouting();
 
-           // app.UseAuthorization();
+           //app.UseAuthorization();
 
             //app.UseSession();
 

@@ -17,18 +17,18 @@ namespace MediHawker.Repositories.Auth.Implementation
             _context = context;
         }
 
-        public bool Login(ConsumerInfoModel consumer)
+        public ConConsumers GetUserNameAndPass(ConsumerInfoModel consumer)
         {
             try
             {
-                var consumerDb = _context.ConConsumers.FirstOrDefault(x => x.UserName == consumer.UserName);
+                var consumerDb = _context.ConConsumers.FirstOrDefault(x => x.UserName == consumer.UserName && x.Password == consumer.Password);
                 if (consumerDb != null)
                 {
-                    return true;
+                    return consumerDb;
                 }
                 else
                 {
-                    return false;
+                    return new ConConsumers();
                 }
             }
             catch (Exception ex)
@@ -37,6 +37,8 @@ namespace MediHawker.Repositories.Auth.Implementation
                 throw;
             }
         }
+
+        
 
         public bool Logout()
         {

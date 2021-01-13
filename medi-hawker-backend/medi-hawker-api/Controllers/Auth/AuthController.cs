@@ -28,12 +28,12 @@ namespace medi_hawker_api.Controllers.Auth
             try
             {
                var loginResponse =  _authService.Login(consumer);
-                if (loginResponse)
+                if (loginResponse!=null)
                 {
-                    return Ok("Success");
+                    return Ok(loginResponse);
                 }
                 else {
-                    return BadRequest("Invalid User");
+                    return Unauthorized("Invalid User");
                 }
                 
             }
