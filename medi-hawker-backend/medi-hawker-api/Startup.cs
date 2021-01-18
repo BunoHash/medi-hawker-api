@@ -39,7 +39,7 @@ namespace MediHawkerAPI
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .AllowCredentials()
-                    .WithOrigins("http://localhost:4300");
+                    .WithOrigins("http://localhost:4200");
                 });
             });
 
@@ -55,6 +55,13 @@ namespace MediHawkerAPI
             }
 
             app.UseCors("CorsPolicy");
+
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
