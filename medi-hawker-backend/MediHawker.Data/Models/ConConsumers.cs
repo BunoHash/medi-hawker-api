@@ -10,9 +10,10 @@ namespace MediHawker.Data
     {
         public int ConsumerId { get; set; }
         public string UserName { get; set; }
-        public string CartItemCount { get; set; }
+        public int? CartItemCount { get; set; }
         public string Phone { get; set; }
         public DateTime? CreatedOn { get; set; }
+        public string Password { get; set; }
         public int? CreatedBy { get; set; }
     }
 }

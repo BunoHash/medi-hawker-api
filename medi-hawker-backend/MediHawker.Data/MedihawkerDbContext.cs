@@ -2,7 +2,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 
 
@@ -30,17 +29,171 @@ namespace MediHawker.Data
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            
+            modelBuilder.Entity<ConConsumers>(entity =>
+            {
+                entity.HasKey(e => e.ConsumerId)
+                    .HasName("PK_Consumers");
 
-            
+                entity.ToTable("CON_CONSUMERS");
 
-           
+                entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
 
-            
+                entity.Property(e => e.CartItemCount).HasColumnName("CART_ITEM_COUNT");
 
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
 
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
 
+                entity.Property(e => e.Password)
+                    .HasMaxLength(100)
+                    .HasColumnName("PASSWORD");
 
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(100)
+                    .HasColumnName("PHONE");
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(100)
+                    .HasColumnName("USER_NAME");
+            });
+
+            modelBuilder.Entity<ConConsumersDetails>(entity =>
+            {
+                entity.HasKey(e => e.ConsumerDetailsId)
+                    .HasName("PK_CONSUMERS_DETAILS");
+
+                entity.ToTable("CON_CONSUMERS_DETAILS");
+
+                entity.Property(e => e.ConsumerDetailsId).HasColumnName("CONSUMER_DETAILS_ID");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(100)
+                    .HasColumnName("ADDRESS");
+
+                entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(100)
+                    .HasColumnName("EMAIL");
+
+                entity.Property(e => e.FirstName)
+                    .HasMaxLength(100)
+                    .HasColumnName("FIRST_NAME");
+
+                entity.Property(e => e.LastName)
+                    .HasMaxLength(100)
+                    .HasColumnName("LAST_NAME");
+            });
+
+            modelBuilder.Entity<ConConsumersPurchaseHistory>(entity =>
+            {
+                entity.HasKey(e => e.PurchaseHistoryId)
+                    .HasName("PK_CONSUMERS_PURCHASE_HISTORY");
+
+                entity.ToTable("CON_CONSUMERS_PURCHASE_HISTORY");
+
+                entity.Property(e => e.PurchaseHistoryId).HasColumnName("PURCHASE_HISTORY_ID");
+
+                entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
+
+                entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
+            });
+
+            modelBuilder.Entity<ConOrderDetails>(entity =>
+            {
+                entity.HasKey(e => e.OrderDetailsId)
+                    .HasName("PK_ORDER_DETAILS");
+
+                entity.ToTable("CON_ORDER_DETAILS");
+
+                entity.Property(e => e.OrderDetailsId).HasColumnName("ORDER_DETAILS_ID");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
+
+                entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
+
+                entity.Property(e => e.ProductId).HasColumnName("PRODUCT_ID");
+
+                entity.Property(e => e.PurchaseCount).HasColumnName("PURCHASE_COUNT");
+
+                entity.Property(e => e.TotalPrice).HasColumnName("TOTAL_PRICE");
+
+                entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
+            });
+
+            modelBuilder.Entity<ConOrders>(entity =>
+            {
+                entity.HasKey(e => e.OrderId)
+                    .HasName("PK_ORDERS");
+
+                entity.ToTable("CON_ORDERS");
+
+                entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
+
+                entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
+
+                entity.Property(e => e.ItemCount).HasColumnName("ITEM_COUNT");
+
+                entity.Property(e => e.TotalPrice).HasColumnName("TOTAL_PRICE");
+            });
+
+            modelBuilder.Entity<ConProducts>(entity =>
+            {
+                entity.HasKey(e => e.ProductId)
+                    .HasName("PK_PRODUCTS_1");
+
+                entity.ToTable("CON_PRODUCTS");
+
+                entity.Property(e => e.ProductId).HasColumnName("PRODUCT_ID");
+
+                entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
+
+                entity.Property(e => e.CreatedOn)
+                    .HasColumnType("datetime")
+                    .HasColumnName("CREATED_ON");
+
+                entity.Property(e => e.Dose).HasColumnName("DOSE");
+
+                entity.Property(e => e.GenericName)
+                    .HasMaxLength(100)
+                    .HasColumnName("GENERIC_NAME");
+
+                entity.Property(e => e.ManufacturerId).HasColumnName("MANUFACTURER_ID");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .HasColumnName("NAME");
+
+                entity.Property(e => e.PaxCount)
+                    .HasMaxLength(100)
+                    .HasColumnName("PAX_COUNT");
+
+                entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
+            });
 
             OnModelCreatingPartial(modelBuilder);
         }

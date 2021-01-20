@@ -17,15 +17,17 @@ namespace MediHawker.Data.Mappings
 
             entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
 
-            entity.Property(e => e.CartItemCount)
-                .HasMaxLength(100)
-                .HasColumnName("CART_ITEM_COUNT");
+            entity.Property(e => e.CartItemCount).HasColumnName("CART_ITEM_COUNT");
 
             entity.Property(e => e.CreatedBy).HasColumnName("CREATED_BY");
 
             entity.Property(e => e.CreatedOn)
                 .HasColumnType("datetime")
                 .HasColumnName("CREATED_ON");
+
+            entity.Property(e => e.Password)
+                .HasMaxLength(100)
+                .HasColumnName("PASSWORD");
 
             entity.Property(e => e.Phone)
                 .HasMaxLength(100)
