@@ -41,9 +41,8 @@ namespace medi_hawker_api.Controllers.Auth
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return Unauthorized("Invalid User");
 
-                var msg = new HttpResponseException(HttpStatusCode.Unauthorized) { var ResponsePhrase = "Oops!!" };
-                throw new HttpResponseException(msg);
             }
             
             
