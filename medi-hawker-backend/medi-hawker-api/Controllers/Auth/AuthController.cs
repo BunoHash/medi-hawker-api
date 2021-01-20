@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace medi_hawker_api.Controllers.Auth
@@ -40,10 +41,12 @@ namespace medi_hawker_api.Controllers.Auth
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                throw;
+
+                var msg = new HttpResponseException(HttpStatusCode.Unauthorized) { var ResponsePhrase = "Oops!!" };
+                throw new HttpResponseException(msg);
             }
             
-
+            
         }
 
         [HttpPost]

@@ -4,10 +4,16 @@ using System.Text;
 
 namespace MediHawker.Data.Custom_Models
 {
-    class ConsumerRegisterModel
+   public class ConsumerRegisterModel
     {
 
-        public ConConsumers Consumers { get; set; }
+        public ConConsumers Consumer { get; set; }
         public ConConsumersDetails ConsumerDetails{ get; set; }
+
+        public ConsumerRegisterModel()
+        {
+            Consumer = new ConConsumers();
+            ConsumerDetails = new ConConsumersDetails();
+        }
     }
 }

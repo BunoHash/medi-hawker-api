@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediHawker.Data;
+using MediHawker.Data.Custom_Models;
 using MediHawker.Services.Consumer.Interface;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,17 +39,35 @@ namespace medi_hawker_api.Controllers.Consumer
         // POST api/<controller>
         [HttpPost]
         [Route("saveRegisterConsumer")]
-        public void saveRegisterConsumer(ConConsumers conConsumser)
+        public IActionResult saveRegisterConsumer(ConsumerRegisterModel conModel)
         {
-            this._consumerService.Save(conConsumser);
+           var response = this._consumerService.Save(conModel);
+            if (response)
+            {
+                return Ok("Success");
+            }
+            else
+            {
+                return BadRequest("Bad Request");
+            }
+           // Console.WriteLine(consumerInfo.ConsumerId);
         }
 
         [HttpPost]
         [Route("updateRegisterConsumer")]
-        public void updateRegisterConsumer(ConConsumers conConsumser)
+        public IActionResult updateRegisterConsumer(ConsumerRegisterModel conModel)
         {
             
-            this._consumerService.Update(conConsumser);
+            var response = this._consumerService.Update(conModel);
+
+            if (response)
+            {
+                return Ok("Success");
+            }
+            else
+            {
+                return BadRequest("bad request!");
+            }
         }
 
         // PUT api/<controller>/5

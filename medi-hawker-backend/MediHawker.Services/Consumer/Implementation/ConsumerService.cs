@@ -1,4 +1,5 @@
 ﻿using MediHawker.Data;
+using MediHawker.Data.Custom_Models;
 using MediHawker.Repositories.Consumer.Interface;
 using MediHawker.Services.Consumer.Interface;
 using System;
@@ -15,15 +16,15 @@ namespace MediHawker.Services.Consumer.Implementation
         {
             this._consumerRepository = consumerRepository;
         }
-        public void Save(ConConsumers conConsumser)
+        public bool Save(ConsumerRegisterModel conModel)
         {
-            _consumerRepository.Save(conConsumser);
+            return _consumerRepository.Save(conModel);
         }
 
-        public bool Update(ConConsumers conConsumser)
+        public bool Update(ConsumerRegisterModel conModel)
         {
-            _consumerRepository.Update(conConsumser);
-            return true;
+            return _consumerRepository.Update(conModel);
+             
         }
     }
 }
