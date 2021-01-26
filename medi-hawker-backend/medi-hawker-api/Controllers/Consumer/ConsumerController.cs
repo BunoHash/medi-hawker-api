@@ -39,9 +39,9 @@ namespace medi_hawker_api.Controllers.Consumer
         // POST api/<controller>
         [HttpPost]
         [Route("saveRegisterConsumer")]
-        public IActionResult saveRegisterConsumer(ConsumerRegisterModel conModel)
+        public IActionResult saveRegisterConsumer(ConsumerRegisterModel consumer)
         {
-           var response = this._consumerService.Save(conModel);
+           var response = this._consumerService.Save(consumer);
             if (response)
             {
                 return Ok("Success");

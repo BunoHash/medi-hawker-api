@@ -37,7 +37,6 @@ namespace MediHawker.Repositories.Consumer.Implementation
             }
             catch (Exception ex)
             {
-
                 Console.WriteLine(ex.Message);
             }
             return _context.SaveChanges() > 0;
