@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace MediHawker.Data
 {
-    public partial class ConConsumersDetails
+    public partial class ConsumersDetails
     {
         public int ConsumerDetailsId { get; set; }
         public string Address { get; set; }

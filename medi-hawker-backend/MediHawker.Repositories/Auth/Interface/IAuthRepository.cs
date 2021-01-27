@@ -9,6 +9,6 @@ namespace MediHawker.Repositories.Auth.Interface
     public interface IAuthRepository
     {
         bool Logout();
-        ConConsumers GetUserNameAndPass(ConsumerInfoModel consumer);
+        Consumers GetUserNameAndPass(ConsumerInfoModel consumer);
     }
 }

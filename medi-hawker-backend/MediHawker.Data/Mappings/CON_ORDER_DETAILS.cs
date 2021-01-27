@@ -6,9 +6,9 @@ using System.Text;
 
 namespace MediHawker.Data.Mappings
 {
-    class CON_ORDER_DETAILS : IEntityTypeConfiguration<ConOrderDetails>
+    class CON_ORDER_DETAILS : IEntityTypeConfiguration<OrderDetails>
     {
-        public void Configure(EntityTypeBuilder<ConOrderDetails> entity)
+        public void Configure(EntityTypeBuilder<OrderDetails> entity)
         {
             entity.HasKey(e => e.OrderDetailsId)
                     .HasName("PK_ORDER_DETAILS");

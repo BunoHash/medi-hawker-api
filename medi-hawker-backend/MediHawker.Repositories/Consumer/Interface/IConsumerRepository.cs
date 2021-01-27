@@ -10,5 +10,7 @@ namespace MediHawker.Repositories.Consumer.Interface
     {
         bool Save(ConsumerRegisterModel conModel);
         bool Update(ConsumerRegisterModel conModel);
+        bool CheckEmail(string email);
+        bool CheckUsername(string username);
     }
 }

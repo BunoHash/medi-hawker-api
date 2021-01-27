@@ -6,14 +6,12 @@ using System.Collections.Generic;
 
 namespace MediHawker.Data
 {
-    public partial class ConConsumers
+    public partial class ConsumersPurchaseHistory
     {
-        public int ConsumerId { get; set; }
-        public string UserName { get; set; }
-        public int? CartItemCount { get; set; }
-        public string Phone { get; set; }
+        public int PurchaseHistoryId { get; set; }
+        public int? ConsumerId { get; set; }
         public DateTime? CreatedOn { get; set; }
-        public string Password { get; set; }
         public int? CreatedBy { get; set; }
+        public int? OrderId { get; set; }
     }
 }

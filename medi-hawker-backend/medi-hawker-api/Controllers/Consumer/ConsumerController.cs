@@ -19,7 +19,7 @@ namespace medi_hawker_api.Controllers.Consumer
         private readonly IConsumerService _consumerService;
         public ConsumerController(IConsumerService consumerService)
         {
-            _consumerService=consumerService;
+            _consumerService = consumerService;
         }
         // GET: api/<controller>
         [HttpGet]
@@ -35,21 +35,29 @@ namespace medi_hawker_api.Controllers.Consumer
         {
             return "value";
         }
+        //POST api for emailAlreayExists
+        [HttpPost]
+        [Route("emailAlreayExists")]
+        public bool emailAlreayExists(string email)
+        {
+            return this._consumerService.CheckEmail(email);
+        }
+
+        //POST api for userAlreayExists
+        [HttpPost]
+        [Route("userNameAlreayExists")]
+        public bool userNameAlreayExists(string username)
+        {
+            return this._consumerService.CheckUsername(username);
+        }
 
         // POST api/<controller>
         [HttpPost]
         [Route("saveRegisterConsumer")]
-        public IActionResult saveRegisterConsumer(ConsumerRegisterModel consumer)
+        public bool saveRegisterConsumer(ConsumerRegisterModel consumer)
         {
            var response = this._consumerService.Save(consumer);
-            if (response)
-            {
-                return Ok("Success");
-            }
-            else
-            {
-                return BadRequest("Bad Request");
-            }
+            return response;
            // Console.WriteLine(consumerInfo.ConsumerId);
         }
 

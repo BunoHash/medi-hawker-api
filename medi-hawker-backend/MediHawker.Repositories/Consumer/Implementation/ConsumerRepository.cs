@@ -18,20 +18,50 @@ namespace MediHawker.Repositories.Consumer.Implementation
             _context = context;
         }
 
+        public bool CheckEmail(string email)
+        {
+            if (!string.IsNullOrEmpty(email))
+            {
+                var trimedEmail = email.Trim();
+                var consumer =  _context.ConsumersDetails.FirstOrDefault( x => x.Email == trimedEmail);
+                if(consumer != null)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        public bool CheckUsername(string username)
+        {
+            if (!string.IsNullOrEmpty(username))
+            {
+                var trimedusername = username.Trim();
+                var consumer = _context.Consumers.FirstOrDefault(x => x.UserName == trimedusername);
+                if (consumer != null)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public bool Save(ConsumerRegisterModel conModel)
         {
             try
             {
 
-                //for consumer
+             
                 conModel.Consumer.CreatedOn = DateTime.UtcNow;
-                _context.ConConsumers.Add(conModel.Consumer);
+                _context.Consumers.Add(conModel.Consumer);
                 _context.SaveChanges();
 
                 //for consumer detail
                 conModel.ConsumerDetails.ConsumerId = conModel.Consumer.ConsumerId;
                 conModel.ConsumerDetails.CreatedOn = DateTime.UtcNow;
-                _context.ConConsumersDetails.Add(conModel.ConsumerDetails);
+                _context.ConsumersDetails.Add(conModel.ConsumerDetails);
                
                 
             }
@@ -46,7 +76,7 @@ namespace MediHawker.Repositories.Consumer.Implementation
         {
             try
             {
-               var consumer  = _context.ConConsumers.FirstOrDefault(x => x.ConsumerId==conModel.Consumer.ConsumerId);
+               var consumer  = _context.Consumers.FirstOrDefault(x => x.ConsumerId==conModel.Consumer.ConsumerId);
                 if (consumer != null)
                 {
                     consumer.CartItemCount = conModel.Consumer.CartItemCount;
@@ -58,7 +88,7 @@ namespace MediHawker.Repositories.Consumer.Implementation
                      _context.SaveChanges();
                 }
 
-                var consumerDetails = _context.ConConsumersDetails.FirstOrDefault(x => x.ConsumerId == conModel.ConsumerDetails.ConsumerId);
+                var consumerDetails = _context.ConsumersDetails.FirstOrDefault(x => x.ConsumerId == conModel.ConsumerDetails.ConsumerId);
                 if (consumerDetails != null)
                 {
                     consumerDetails.FirstName = conModel.ConsumerDetails.FirstName;

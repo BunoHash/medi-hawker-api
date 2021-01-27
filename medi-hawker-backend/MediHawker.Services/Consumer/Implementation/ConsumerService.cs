@@ -16,6 +16,17 @@ namespace MediHawker.Services.Consumer.Implementation
         {
             this._consumerRepository = consumerRepository;
         }
+
+        public bool CheckEmail(string email)
+        {
+            return _consumerRepository.CheckEmail(email);
+        }
+        public bool CheckUsername(string email)
+        {
+            return _consumerRepository.CheckUsername(email);
+        }
+        
+
         public bool Save(ConsumerRegisterModel conModel)
         {
             return _consumerRepository.Save(conModel);

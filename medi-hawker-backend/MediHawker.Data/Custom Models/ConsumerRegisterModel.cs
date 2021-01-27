@@ -7,13 +7,13 @@ namespace MediHawker.Data.Custom_Models
    public class ConsumerRegisterModel
     {
 
-        public ConConsumers Consumer { get; set; }
-        public ConConsumersDetails ConsumerDetails{ get; set; }
+        public Consumers Consumer { get; set; }
+        public ConsumersDetails ConsumerDetails{ get; set; }
 
         public ConsumerRegisterModel()
         {
-            Consumer = new ConConsumers();
-            ConsumerDetails = new ConConsumersDetails();
+            Consumer = new Consumers();
+            ConsumerDetails = new ConsumersDetails();
         }
     }
 }

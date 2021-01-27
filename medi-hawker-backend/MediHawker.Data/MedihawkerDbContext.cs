@@ -18,18 +18,18 @@ namespace MediHawker.Data
         {
         }
 
-        public virtual DbSet<ConConsumers> ConConsumers { get; set; }
-        public virtual DbSet<ConConsumersDetails> ConConsumersDetails { get; set; }
-        public virtual DbSet<ConConsumersPurchaseHistory> ConConsumersPurchaseHistory { get; set; }
-        public virtual DbSet<ConOrderDetails> ConOrderDetails { get; set; }
-        public virtual DbSet<ConOrders> ConOrders { get; set; }
-        public virtual DbSet<ConProducts> ConProducts { get; set; }
+        public virtual DbSet<Consumers> Consumers{ get; set; }
+        public virtual DbSet<ConsumersDetails> ConsumersDetails { get; set; }
+        public virtual DbSet<ConsumersPurchaseHistory> ConConsumersPurchaseHistory { get; set; }
+        public virtual DbSet<OrderDetails> ConOrderDetails { get; set; }
+        public virtual DbSet<Orders> ConOrders { get; set; }
+        public virtual DbSet<Products> ConProducts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<ConConsumers>(entity =>
+            modelBuilder.Entity<Consumers>(entity =>
             {
                 entity.HasKey(e => e.ConsumerId)
                     .HasName("PK_Consumers");
@@ -59,7 +59,7 @@ namespace MediHawker.Data
                     .HasColumnName("USER_NAME");
             });
 
-            modelBuilder.Entity<ConConsumersDetails>(entity =>
+            modelBuilder.Entity<ConsumersDetails>(entity =>
             {
                 entity.HasKey(e => e.ConsumerDetailsId)
                     .HasName("PK_CONSUMERS_DETAILS");
@@ -93,7 +93,7 @@ namespace MediHawker.Data
                     .HasColumnName("LAST_NAME");
             });
 
-            modelBuilder.Entity<ConConsumersPurchaseHistory>(entity =>
+            modelBuilder.Entity<ConsumersPurchaseHistory>(entity =>
             {
                 entity.HasKey(e => e.PurchaseHistoryId)
                     .HasName("PK_CONSUMERS_PURCHASE_HISTORY");
@@ -113,7 +113,7 @@ namespace MediHawker.Data
                 entity.Property(e => e.OrderId).HasColumnName("ORDER_ID");
             });
 
-            modelBuilder.Entity<ConOrderDetails>(entity =>
+            modelBuilder.Entity<OrderDetails>(entity =>
             {
                 entity.HasKey(e => e.OrderDetailsId)
                     .HasName("PK_ORDER_DETAILS");
@@ -139,7 +139,7 @@ namespace MediHawker.Data
                 entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
             });
 
-            modelBuilder.Entity<ConOrders>(entity =>
+            modelBuilder.Entity<Orders>(entity =>
             {
                 entity.HasKey(e => e.OrderId)
                     .HasName("PK_ORDERS");
@@ -161,7 +161,7 @@ namespace MediHawker.Data
                 entity.Property(e => e.TotalPrice).HasColumnName("TOTAL_PRICE");
             });
 
-            modelBuilder.Entity<ConProducts>(entity =>
+            modelBuilder.Entity<Products>(entity =>
             {
                 entity.HasKey(e => e.ProductId)
                     .HasName("PK_PRODUCTS_1");

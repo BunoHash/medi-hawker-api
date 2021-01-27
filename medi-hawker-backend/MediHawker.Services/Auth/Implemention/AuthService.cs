@@ -24,7 +24,7 @@ namespace MediHawker.Services.Auth.Implemention
 
         public string Login(ConsumerInfoModel consumer)
         {
-            ConConsumers consumerFromDb = null;
+            Consumers consumerFromDb = null;
             consumerFromDb = _authRepository.GetUserNameAndPass(consumer);
             var token = "";
             if (consumerFromDb.ConsumerId == 0)
@@ -41,7 +41,7 @@ namespace MediHawker.Services.Auth.Implemention
             return token;
         }
 
-        private string GetTokenString(ConConsumers consumerFromDb)
+        private string GetTokenString(Consumers consumerFromDb)
         {
 
 
