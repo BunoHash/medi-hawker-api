@@ -11,7 +11,12 @@ namespace MediHawker.Data
         public int ConsumerDetailsId { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
+
+
+        //remove nullable
         public int? ConsumerId { get; set; }
+
+
         public DateTime CreatedOn { get; set; }
         public int? CreatedBy { get; set; }
         public string FirstName { get; set; }

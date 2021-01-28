@@ -36,16 +36,16 @@ namespace medi_hawker_api.Controllers.Consumer
             return "value";
         }
         //POST api for emailAlreayExists
-        [HttpPost]
-        [Route("emailAlreayExists")]
+        [HttpGet("{email}")]
+        [Route("emailAlreayExists/{email}")]
         public bool emailAlreayExists(string email)
         {
             return this._consumerService.CheckEmail(email);
         }
 
         //POST api for userAlreayExists
-        [HttpPost]
-        [Route("userNameAlreayExists")]
+        [HttpGet("{username}")]
+        [Route("userNameAlreayExists")] 
         public bool userNameAlreayExists(string username)
         {
             return this._consumerService.CheckUsername(username);

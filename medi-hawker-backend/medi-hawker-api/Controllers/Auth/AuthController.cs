@@ -24,24 +24,24 @@ namespace medi_hawker_api.Controllers.Auth
 
         [HttpPost]
         [Route("login")]
-        public IActionResult LoginConsumer(ConsumerInfoModel consumer)
+        public string LoginConsumer(ConsumerInfoModel model)
         {
             try
             {
-               var loginResponse =  _authService.Login(consumer);
+               var loginResponse =  _authService.Login(model);
                 if (loginResponse!=null)
                 {
-                    return Ok(loginResponse);
+                    return loginResponse;
                 }
                 else {
-                    return Unauthorized("Invalid User");
+                    return "Invalid User";
                 }
                 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return Unauthorized("Invalid User");
+                return  "Invalid User";
 
             }
             
