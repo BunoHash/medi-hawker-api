@@ -1,10 +1,12 @@
 ﻿using MediHawker.Data;
 using MediHawker.Data.Custom_Models;
 using MediHawker.Repositories.Consumer.Interface;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MediHawker.Repositories.Consumer.Implementation
 {
@@ -48,6 +50,12 @@ namespace MediHawker.Repositories.Consumer.Implementation
             return false;
         }
 
+        public List<Manufacturer> getAllManufacturer()
+        {
+         
+            List<Manufacturer> manufacturer = (from x in _context.Manufacturer select x).ToList();
+            return manufacturer;
+        }
         public bool Save(ConsumerRegisterModel conModel)
         {
             try
@@ -108,5 +116,7 @@ namespace MediHawker.Repositories.Consumer.Implementation
             }
             return _context.SaveChanges() > 0;
         }
+
+        
     }
 }

@@ -35,7 +35,7 @@ namespace medi_hawker_api.Controllers.Consumer
         {
             return "value";
         }
-        //POST api for emailAlreayExists
+        //GET api for emailAlreayExists
         [HttpGet("{email}")]
         [Route("emailAlreayExists/{email}")]
         public bool emailAlreayExists(string email)
@@ -43,14 +43,21 @@ namespace medi_hawker_api.Controllers.Consumer
             return this._consumerService.CheckEmail(email);
         }
 
-        //POST api for userAlreayExists
+        //GET api for userAlreayExists
         [HttpGet("{username}")]
         [Route("userNameAlreayExists")] 
         public bool userNameAlreayExists(string username)
         {
             return this._consumerService.CheckUsername(username);
         }
+        [HttpGet()]
+        [Route("allManufacturer")]
 
+        
+        public List<Manufacturer>getAllManufacturer()
+        {
+            return _consumerService.getAllManufacturer();
+        }
         // POST api/<controller>
         [HttpPost]
         [Route("saveRegisterConsumer")]
@@ -60,7 +67,13 @@ namespace medi_hawker_api.Controllers.Consumer
             return response;
            // Console.WriteLine(consumerInfo.ConsumerId);
         }
-
+        //[HttpPost]
+        //[Route("addNewProduct")]
+        //public bool addNewProduct(ConsumerRegisterModel consumer)
+        //{
+        //    var response = this._consumerService.Save(consumer);
+        //    return response;
+        //}
         [HttpPost]
         [Route("updateRegisterConsumer")]
         public IActionResult updateRegisterConsumer(ConsumerRegisterModel conModel)

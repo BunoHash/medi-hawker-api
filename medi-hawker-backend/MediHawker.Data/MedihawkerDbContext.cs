@@ -24,6 +24,7 @@ namespace MediHawker.Data
         public virtual DbSet<OrderDetails> ConOrderDetails { get; set; }
         public virtual DbSet<Orders> ConOrders { get; set; }
         public virtual DbSet<Products> ConProducts { get; set; }
+        public virtual DbSet<Manufacturer> Manufacturer { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -194,6 +195,30 @@ namespace MediHawker.Data
 
                 entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
             });
+
+            modelBuilder.Entity<Manufacturer>(entity =>
+            {
+                entity.ToTable("MANUFACTURER");
+
+                entity.Property(e => e.ManufacturerId).HasColumnName("MANUFACTURER_ID");
+
+                entity.Property(e => e.Address)
+                    .HasMaxLength(100)
+                    .HasColumnName("ADDRESS");
+
+                entity.Property(e => e.Email)
+                    .HasMaxLength(100)
+                    .HasColumnName("EMAIL");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(100)
+                    .HasColumnName("NAME");
+
+                entity.Property(e => e.Phone).HasColumnName("PHONE");
+            
+            });
+
+
 
             OnModelCreatingPartial(modelBuilder);
         }
