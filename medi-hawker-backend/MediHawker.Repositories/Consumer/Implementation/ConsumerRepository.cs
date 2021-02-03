@@ -50,12 +50,7 @@ namespace MediHawker.Repositories.Consumer.Implementation
             return false;
         }
 
-        public List<Manufacturer> getAllManufacturer()
-        {
-         
-            List<Manufacturer> manufacturer = (from x in _context.Manufacturer select x).ToList();
-            return manufacturer;
-        }
+        
         public bool Save(ConsumerRegisterModel conModel)
         {
             try

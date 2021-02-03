@@ -50,14 +50,8 @@ namespace medi_hawker_api.Controllers.Consumer
         {
             return this._consumerService.CheckUsername(username);
         }
-        [HttpGet()]
-        [Route("allManufacturer")]
-
         
-        public List<Manufacturer>getAllManufacturer()
-        {
-            return _consumerService.getAllManufacturer();
-        }
+       
         // POST api/<controller>
         [HttpPost]
         [Route("saveRegisterConsumer")]

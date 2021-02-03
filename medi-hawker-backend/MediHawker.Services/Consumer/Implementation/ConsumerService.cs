@@ -37,10 +37,6 @@ namespace MediHawker.Services.Consumer.Implementation
             return _consumerRepository.Update(conModel);
              
         }
-        public List<Manufacturer> getAllManufacturer()
-        {
-            return _consumerRepository.getAllManufacturer();
-
-        }
+        
     }
 }

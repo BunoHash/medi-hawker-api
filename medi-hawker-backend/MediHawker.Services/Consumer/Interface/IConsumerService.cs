@@ -11,7 +11,7 @@ namespace MediHawker.Services.Consumer.Interface
         bool Save(ConsumerRegisterModel conModel);
         bool Update(ConsumerRegisterModel conModel);
         bool CheckEmail(string email);
-        List<Manufacturer> getAllManufacturer();
+        
         bool CheckUsername(string username);
     }
 }

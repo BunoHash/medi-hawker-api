@@ -13,6 +13,6 @@ namespace MediHawker.Repositories.Consumer.Interface
         bool CheckEmail(string email);
         bool CheckUsername(string username);
 
-        List<Manufacturer> getAllManufacturer();
+        
     }
 }
