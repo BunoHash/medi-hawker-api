@@ -4,12 +4,16 @@ using MediHawker.Repositories.Consumer.Implementation;
 using MediHawker.Repositories.Consumer.Interface;
 using MediHawker.Repositories.Manufacture.Implementation;
 using MediHawker.Repositories.Manufacture.Interface;
+using MediHawker.Repositories.Product.Implementation;
+using MediHawker.Repositories.Product.Interface;
 using MediHawker.Services.Auth.Implemention;
 using MediHawker.Services.Auth.Interface;
 using MediHawker.Services.Consumer.Implementation;
 using MediHawker.Services.Consumer.Interface;
 using MediHawker.Services.Manufacture.Implementation;
 using MediHawker.Services.Manufacture.Interface;
+using MediHawker.Services.Product.Implementation;
+using MediHawker.Services.Product.Interface;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,12 +34,13 @@ namespace medi_hawker_api
             services.AddScoped<IConsumerService, ConsumerService>();
             services.AddScoped<IManufacturerService, ManufacturerService>();
             services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IProductService, ProductService>();
 
             //Repositories
             services.AddScoped<IConsumerRepository, ConsumerRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
-
+            services.AddScoped<IProductRepository, ProductRepository>();
             //JWT Token Config
             var key = configuration.GetSection("JWT:Secret").Value;
             var issuer = configuration.GetSection("JWT:ValidIssuer").Value;

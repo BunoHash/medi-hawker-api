@@ -1,4 +1,5 @@
 ﻿{
+   "CodeGenerationMode": 0,
    "ContextClassName": "MedihawkerDbContext_TEST",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
@@ -13,10 +14,11 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[MANUFACTURER]",
+         "Name": "[dbo].[GENERIC]",
          "ObjectType": 0
       }
    ],
+   "UiHint": "DESKTOP-MVQED91.MediHawker",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,
@@ -24,6 +26,9 @@
    "UseHandleBars": false,
    "UseInflector": false,
    "UseLegacyPluralizer": false,
+   "UseNoConstructor": false,
+   "UseNoNavigations": false,
    "UseNodaTime": false,
+   "UseNullableReferences": false,
    "UseSpatial": false
 }

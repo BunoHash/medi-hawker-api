@@ -25,6 +25,15 @@ namespace medi_hawker_api.Controllers
         {
             return _manufactureService.getAllManufacturer();
         }
+        //[HttpPost]
+        //[Route("saveItemInfo")]
+        //public bool saveItemInfo()
+        //{
+        //    var response = this._manufactureService.Save();
+        //    return response;
+        //}
+
+         
     }
     
 }

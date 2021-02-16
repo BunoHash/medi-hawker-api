@@ -10,11 +10,18 @@ namespace MediHawker.Data
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string GenericName { get; set; }
+        public int? GenericId { get; set; }
         public string PaxCount { get; set; }
         public int? ManufacturerId { get; set; }
         public int? Dose { get; set; }
         public double? UnitPrice { get; set; }
         public DateTime? CreatedOn { get; set; }
         public int? CreatedBy { get; set; }
-    }
+        public float BuyingPrice { get; set; }
+        public float SellingPrice { get; set; }
+        public string Address { get; set; }
+
+        public string ImgPath { get; set; }
+       
+    }   
 }

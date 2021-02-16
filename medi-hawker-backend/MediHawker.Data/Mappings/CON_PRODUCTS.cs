@@ -40,6 +40,25 @@ namespace MediHawker.Data.Mappings
                 .HasColumnName("PAX_COUNT");
 
             entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
+
+            entity.Property(e => e.BuyingPrice).HasColumnName("BUYING_PRICE");
+
+            entity.Property(e => e.SellingPrice).HasColumnName("SELLING_PRICE");
+
+            entity.Property(e => e.Address).HasColumnName("ADDRESS")
+                                           .IsRequired()
+                                           .HasColumnType("nvarchar(max)");
+
+            entity.Property(e => e.ImgPath).HasColumnName("IMG_PATH")
+                                           .HasColumnType("nvarchar(max)");
+
+            //entity.Property<string>("Address")
+            //            .IsRequired()
+            //            .HasColumnType("nvarchar(max)");
+
+            //entity.Property<string>("ImgPath")
+
+            //    .HasColumnType("nvarchar(max)");
         }
     }
 }

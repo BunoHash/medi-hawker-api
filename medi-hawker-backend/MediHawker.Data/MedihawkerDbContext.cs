@@ -25,6 +25,8 @@ namespace MediHawker.Data
         public virtual DbSet<Orders> ConOrders { get; set; }
         public virtual DbSet<Products> ConProducts { get; set; }
         public virtual DbSet<Manufacturer> Manufacturer { get; set; }
+        public virtual DbSet<Generic> Generic { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -219,8 +221,22 @@ namespace MediHawker.Data
             });
 
 
+            modelBuilder.Entity<Generic>(entity =>
+            {
+                entity.ToTable("GENERIC");
 
-            OnModelCreatingPartial(modelBuilder);
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Description).HasColumnName("DESCRIPTION");
+                entity.Property(e => e.Pharmacology).HasColumnName("PHARMACOLOGY");
+                entity.Property(e => e.Indication).HasColumnName("INDICATION");
+
+                entity.Property(e => e.Name)
+                    .HasMaxLength(50)
+                    .HasColumnName("NAME");
+            });
+
+        OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
