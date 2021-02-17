@@ -18,7 +18,7 @@ namespace medi_hawker_api.Controllers
             _productService = productService;
         }
         [HttpGet]
-        [Route("GetAllProducts")]
+        [Route("getAllGenericName")]
 
         public List<Generic> GetAllGenericName()
         {

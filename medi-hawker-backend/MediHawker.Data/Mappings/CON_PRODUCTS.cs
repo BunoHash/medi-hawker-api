@@ -52,6 +52,8 @@ namespace MediHawker.Data.Mappings
             entity.Property(e => e.ImgPath).HasColumnName("IMG_PATH")
                                            .HasColumnType("nvarchar(max)");
 
+            entity.Property(e => e.GenericId).HasColumnName("GENERIC_ID");
+
             //entity.Property<string>("Address")
             //            .IsRequired()
             //            .HasColumnType("nvarchar(max)");
