@@ -14,7 +14,7 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[GENERIC]",
+         "Name": "[dbo].[CON_PRODUCTS]",
          "ObjectType": 0
       }
    ],

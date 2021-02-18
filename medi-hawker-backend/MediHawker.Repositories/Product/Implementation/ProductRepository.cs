@@ -20,5 +20,32 @@ namespace MediHawker.Repositories.Product.Implementation
             List<Generic> generic = (from x in _context.Generic select x).ToList();
             return generic;
         }
+
+        public bool Save(Products product)
+        {
+            try {
+                if (isValidProduct(product))
+                {
+                    _context.ConProducts.Add(product);
+                    
+                    _context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
+            
+        }
+
+        private bool isValidProduct(Products product)
+        {
+            return true;
+        }
     }
 }

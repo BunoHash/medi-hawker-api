@@ -24,5 +24,13 @@ namespace medi_hawker_api.Controllers
         {
             return _productService.getAllGenericName();
         }
+
+        [HttpPost]
+        [Route("saveProduct")]
+
+        public bool saveProduct(Products product)
+        {
+            return this._productService.Save(product);
+        }
     }
 }
