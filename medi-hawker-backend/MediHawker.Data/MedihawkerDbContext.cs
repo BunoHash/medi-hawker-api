@@ -210,6 +210,7 @@ namespace MediHawker.Data
                     .HasColumnName("SELLING_PRICE");
 
                 entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
+                entity.Property(e => e.Description).HasColumnName("DESCRIPTION");
             });
 
             modelBuilder.Entity<Manufacturer>(entity =>

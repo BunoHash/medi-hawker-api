@@ -54,6 +54,7 @@ namespace MediHawker.Data.Mappings
                 .HasColumnName("SELLING_PRICE");
 
             entity.Property(e => e.UnitPrice).HasColumnName("UNIT_PRICE");
+            entity.Property(e => e.Description).HasColumnName("DESCRIPTION");
         }
     }
 }

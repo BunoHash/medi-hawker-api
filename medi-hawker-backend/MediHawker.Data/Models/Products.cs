@@ -22,5 +22,6 @@ namespace MediHawker.Data
         public string Address { get; set; }
         public string ImgPath { get; set; }
         public int? GenericId { get; set; }
+        public string Description { get; set; }
     }
 }

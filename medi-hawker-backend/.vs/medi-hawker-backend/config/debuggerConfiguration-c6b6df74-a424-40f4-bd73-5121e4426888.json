@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "port": 64210,
+      "port": 57959,
       "name": "Visual Studio launch configuration override"
     }
   ]

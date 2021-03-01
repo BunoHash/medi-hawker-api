@@ -30,7 +30,8 @@ namespace MediHawkerAPI
         {
 
             services.AddDbContext<MedihawkerDbContext>(Options => Options.UseSqlServer(Configuration.GetConnectionString("MediHawkerDB")));
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
+
 
             services.AddCors(opt =>
             {
