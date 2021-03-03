@@ -66,11 +66,11 @@ namespace MediHawkerAPI
 
             app.UseCors("CorsPolicy");
             app.UseStaticFiles();
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticFiles")),
-                RequestPath = new PathString("/StaticFiles")
-            });
+            //app.UseStaticFiles(new StaticFileOptions()
+            //{
+            //    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"StaticFiles")),
+            //    RequestPath = new PathString("/StaticFiles")
+            //});
             app.UseCors(x => x
             .AllowAnyOrigin()
             .AllowAnyMethod()
