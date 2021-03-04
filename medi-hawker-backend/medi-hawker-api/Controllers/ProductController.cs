@@ -32,5 +32,12 @@ namespace medi_hawker_api.Controllers
         {
             return this._productService.Save(product);
         }
+
+        [HttpGet]
+        [Route("getSavedProduct")]
+        public List<Products>GetSavedProduct()
+        {
+            return _productService.getSavedProduct();
+        }
     }
 }

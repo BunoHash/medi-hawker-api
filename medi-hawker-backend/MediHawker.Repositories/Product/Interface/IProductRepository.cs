@@ -9,5 +9,6 @@ namespace MediHawker.Repositories.Product.Interface
     {
         List<Generic> getAllGenericName();
         bool Save(Products product);
+        List<Products> getSavedProducts();
     }
 }

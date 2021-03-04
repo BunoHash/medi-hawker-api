@@ -19,6 +19,11 @@ namespace MediHawker.Services.Product.Implementation
             return _productRepository.getAllGenericName();
         }
 
+        public List<Products> getSavedProduct()
+        {
+            return _productRepository.getSavedProducts();
+        }
+
         public bool Save(Products product)
         {
             return this._productRepository.Save(product);

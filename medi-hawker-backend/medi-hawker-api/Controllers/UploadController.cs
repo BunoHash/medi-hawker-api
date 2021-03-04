@@ -34,7 +34,7 @@ namespace medi_hawker_api.Controllers
                     var file = formCollection.Files.First();
                     var folderName = Path.Combine("StaticFiles", "Images");
                     //var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
-                var imageRootPath = _configuration.GetSection("ImageFileConfig:ImageRootPath").Value;
+                    var imageRootPath = _configuration.GetSection("ImageFileConfig:ImageRootPath").Value;
 
 
                 if (file.Length > 0)

@@ -21,6 +21,19 @@ namespace MediHawker.Repositories.Product.Implementation
             return generic;
         }
 
+        public List<Products> getSavedProducts()
+        {
+            try 
+             {
+                List<Products> product = (from x in _context.ConProducts select x).ToList();
+                return product;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public bool Save(Products product)
         {
             try {
