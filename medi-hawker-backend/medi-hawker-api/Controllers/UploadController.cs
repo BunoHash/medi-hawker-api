@@ -42,6 +42,8 @@ namespace medi_hawker_api.Controllers
                     var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                     var fullPath = Path.Combine(imageRootPath, fileName);
                     var dbPath = Path.Combine(folderName, fileName);
+                    
+                    
 
                     using (var stream = new FileStream(fullPath, FileMode.Create))
                     {
