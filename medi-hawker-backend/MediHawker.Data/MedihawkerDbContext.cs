@@ -26,6 +26,7 @@ namespace MediHawker.Data
         public virtual DbSet<Products> ConProducts { get; set; }
         public virtual DbSet<Manufacturer> Manufacturer { get; set; }
         public virtual DbSet<Generic> Generic { get; set; }
+        public virtual DbSet<Cart> Cart { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -250,8 +251,30 @@ namespace MediHawker.Data
                     .HasMaxLength(50)
                     .HasColumnName("NAME");
             });
+            modelBuilder.Entity<Cart>(entity =>
+            {
+                entity.ToTable("CART");
 
-        OnModelCreatingPartial(modelBuilder);
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.CartItemId).HasColumnName("CART_ITEM_ID");
+
+                entity.Property(e => e.ConsumerId).HasColumnName("CONSUMER_ID");
+
+                entity.Property(e => e.ProductCount).HasColumnName("PRODUCT_COUNT");
+
+                entity.Property(e => e.ProductId).HasColumnName("PRODUCT_ID");
+
+                entity.Property(e => e.SellingPrice)
+                    .HasColumnName("SELLING_PRICE")
+                    .HasColumnType("decimal(18, 0)");
+
+                entity.Property(e => e.TotalPrice)
+                    .HasColumnName("TOTAL_PRICE")
+                    .HasColumnType("decimal(18, 0)");
+            });
+
+            OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

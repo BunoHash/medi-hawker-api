@@ -1,5 +1,4 @@
 ﻿{
-   "CodeGenerationMode": 0,
    "ContextClassName": "MedihawkerDbContext_TEST",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
@@ -14,21 +13,17 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[CON_PRODUCTS]",
-         "ObjectType": 0
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[CART]"
       }
    ],
-   "UiHint": "DESKTOP-MVQED91.MediHawker",
-   "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,
    "UseFluentApiOnly": true,
    "UseHandleBars": false,
    "UseInflector": false,
    "UseLegacyPluralizer": false,
-   "UseNoConstructor": false,
-   "UseNoNavigations": false,
    "UseNodaTime": false,
-   "UseNullableReferences": false,
-   "UseSpatial": false
+   "UseSpatial": false,
+   "UseStoredProcedures": false
 }
