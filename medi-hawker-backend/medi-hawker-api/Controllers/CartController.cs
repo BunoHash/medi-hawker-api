@@ -1,4 +1,5 @@
-﻿using MediHawker.Services.ConsumerCart.Interface;
+﻿using MediHawker.Data;
+using MediHawker.Services.ConsumerCart.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,6 +17,12 @@ namespace medi_hawker_api.Controllers
         public CartController(ICartService cartService)
         {
             _cartService = cartService;
+        }
+        [HttpPost]
+        [Route("addToCart")]
+        public bool AddToCart(Cart cart)
+        {
+            return this._cartService.AddToCart(cart);
         }
     }
 }

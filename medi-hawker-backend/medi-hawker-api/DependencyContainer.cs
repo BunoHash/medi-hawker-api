@@ -2,6 +2,8 @@
 using MediHawker.Repositories.Auth.Interface;
 using MediHawker.Repositories.Consumer.Implementation;
 using MediHawker.Repositories.Consumer.Interface;
+using MediHawker.Repositories.ConsumerCart.Implementation;
+using MediHawker.Repositories.ConsumerCart.Interface;
 using MediHawker.Repositories.Manufacture.Implementation;
 using MediHawker.Repositories.Manufacture.Interface;
 using MediHawker.Repositories.Product.Implementation;
@@ -10,6 +12,8 @@ using MediHawker.Services.Auth.Implemention;
 using MediHawker.Services.Auth.Interface;
 using MediHawker.Services.Consumer.Implementation;
 using MediHawker.Services.Consumer.Interface;
+using MediHawker.Services.ConsumerCart.Implementation;
+using MediHawker.Services.ConsumerCart.Interface;
 using MediHawker.Services.Manufacture.Implementation;
 using MediHawker.Services.Manufacture.Interface;
 using MediHawker.Services.Product.Implementation;
@@ -35,12 +39,14 @@ namespace medi_hawker_api
             services.AddScoped<IManufacturerService, ManufacturerService>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICartService, CartService>();
 
             //Repositories
             services.AddScoped<IConsumerRepository, ConsumerRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
             //JWT Token Config
             var key = configuration.GetSection("JWT:Secret").Value;
             var issuer = configuration.GetSection("JWT:ValidIssuer").Value;

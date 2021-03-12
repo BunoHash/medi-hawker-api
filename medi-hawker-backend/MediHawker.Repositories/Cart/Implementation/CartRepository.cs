@@ -1,11 +1,12 @@
 ﻿using MediHawker.Data;
+using MediHawker.Repositories.ConsumerCart.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MediHawker.Repositories.ConsumerCart.Implementation
 {
-   public class CartRepository
+   public class CartRepository:ICartRepository
     {
         private readonly MedihawkerDbContext _context;
         public CartRepository(MedihawkerDbContext context)
