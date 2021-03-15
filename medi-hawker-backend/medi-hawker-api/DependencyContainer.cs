@@ -47,6 +47,7 @@ namespace medi_hawker_api
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICartRepository, CartRepository>();
+
             //JWT Token Config
             var key = configuration.GetSection("JWT:Secret").Value;
             var issuer = configuration.GetSection("JWT:ValidIssuer").Value;

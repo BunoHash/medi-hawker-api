@@ -11,7 +11,7 @@ namespace MediHawker.Data
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string GenericName { get; set; }
-        public string PaxCount { get; set; }
+        public int? PaxCount { get; set; }
         public int? ManufacturerId { get; set; }
         public int? Dose { get; set; }
         public double? UnitPrice { get; set; }

@@ -46,8 +46,8 @@ namespace MediHawker.Data.Mappings
                 .HasColumnName("NAME");
 
             entity.Property(e => e.PaxCount)
-                .HasMaxLength(100)
                 .HasColumnName("PAX_COUNT");
+            
 
             entity.Property(e => e.SellingPrice)
                 .HasColumnType("decimal(18, 0)")

@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
 
 namespace MediHawker.Services.Auth.Implemention
@@ -52,8 +53,17 @@ namespace MediHawker.Services.Auth.Implemention
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
+            var permClaims = new List<Claim>();
+            permClaims.Add(new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()));
+            permClaims.Add(new Claim("valid", "1"));
+            permClaims.Add(new Claim("userid", consumerFromDb.ConsumerId.ToString()));
+            permClaims.Add(new Claim("Username", consumerFromDb.UserName.ToString()));
+            //permClaims.Add(new Claim("timeZone", userFromDb.TimezoneId.ToString()));
+
+
             var token = new JwtSecurityToken(issuer,
                 audience,
+                permClaims,
                 expires: DateTime.Now.AddDays(1),
                 signingCredentials: credentials);
 
