@@ -7,7 +7,8 @@ namespace MediHawker.Services.Auth.Interface
 {
     public interface IAuthService
     {
-        string Login(ConsumerInfoModel consumer);
+        Data.Consumer Login(ConsumerInfoModel consumer);
         bool Logout();
+        string GetToken(Data.Consumer consumer);
     }
 }

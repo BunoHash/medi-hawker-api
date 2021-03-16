@@ -1,12 +1,10 @@
-﻿using MediHawker.Data;
-using MediHawker.Data.Custom_Models;
+﻿using MediHawker.Data.Custom_Models;
+using MediHawker.Data;
 using MediHawker.Services.Auth.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace medi_hawker_api.Controllers.Auth
 {
@@ -24,28 +22,42 @@ namespace medi_hawker_api.Controllers.Auth
 
         [HttpPost]
         [Route("login")]
-        public string LoginConsumer(ConsumerInfoModel model)
+        public LoginSuccessModel LoginConsumer(ConsumerInfoModel model)
         {
             try
             {
-               var loginResponse =  _authService.Login(model);
-                if (loginResponse!=null)
+                var dbConsumer = _authService.Login(model);
+                if (dbConsumer != null)
                 {
-                    return loginResponse;
+
+                    var successModel = new LoginSuccessModel();
+
+                    successModel.Token = _authService.GetToken(dbConsumer);
+                    successModel.User = dbConsumer;
+                    string jsonString = JsonSerializer.Serialize(successModel);
+                    //string consumerJson;//=  consumer k  Seriali e korba
+                    //return Ok(successModel);
+                    return successModel;
                 }
-                else {
-                    return "Invalid User";
-                }
-                
+                //if (loginResponse!=null)
+                //{
+                //    return loginResponse;
+                //}
+                //else {
+                //    return "Invalid User";
+                //}
+
+                return null;
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return  "Invalid User";
+                return null;
 
             }
-            
-            
+
+
         }
 
         [HttpPost]
@@ -74,4 +86,6 @@ namespace medi_hawker_api.Controllers.Auth
 
         }
     }
+
+
 }

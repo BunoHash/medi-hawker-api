@@ -1,12 +1,12 @@
 ﻿using MediHawker.Data;
 using MediHawker.Data.Custom_Models;
-using MediHawker.Repositories.Consumer.Interface;
-using MediHawker.Services.Consumer.Interface;
+using MediHawker.Repositories.ConsumerSpace.Interface;
+using MediHawker.Services.ConsumerSpace.Interface;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MediHawker.Services.Consumer.Implementation
+namespace MediHawker.Services.ConsumerSpace.Implementation
 {
     public class ConsumerService : IConsumerService
     {

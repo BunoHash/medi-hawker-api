@@ -17,19 +17,12 @@ namespace MediHawker.Repositories.Auth.Implementation
             _context = context;
         }
 
-        public Consumers GetUserNameAndPass(ConsumerInfoModel consumer)
+        public Data.Consumer GetUserNameAndPass(ConsumerInfoModel consumer)
         {
             try
             {
-                var consumerDb = _context.Consumers.FirstOrDefault(x => x.UserName == consumer.UserName && x.Password == consumer.Password);
-                if (consumerDb != null)
-                {
-                    return consumerDb;
-                }
-                else
-                {
-                    return new Consumers();
-                }
+                return _context.Consumers.FirstOrDefault(x => x.UserName == consumer.UserName && x.Password == consumer.Password);
+                 
             }
             catch (Exception ex)
             {

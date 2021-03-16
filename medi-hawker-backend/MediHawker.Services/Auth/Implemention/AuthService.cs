@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using MediHawker.Data;
 
 namespace MediHawker.Services.Auth.Implemention
 {
@@ -23,26 +24,19 @@ namespace MediHawker.Services.Auth.Implemention
             _config = config;
         }
 
-        public string Login(ConsumerInfoModel consumer)
+        public Data.Consumer Login(ConsumerInfoModel consumer)
         {
-            Consumers consumerFromDb = null;
+            Data.Consumer consumerFromDb = null;
             consumerFromDb = _authRepository.GetUserNameAndPass(consumer);
-            var token = "";
-            if (consumerFromDb.ConsumerId == 0)
+            return consumerFromDb;
+            if(consumerFromDb!= null)
             {
-                throw new UnauthorizedAccessException("UnAuthorized");
+                var token =GetTokenString(consumerFromDb);
             }
-            else
-            {
-                token = GetTokenString(consumerFromDb);
-            }
-
-
-
-            return token;
+            return null;
         }
 
-        private string GetTokenString(Consumers consumerFromDb)
+        private string GetTokenString(Data.Consumer consumerFromDb)
         {
 
 
@@ -77,6 +71,20 @@ namespace MediHawker.Services.Auth.Implemention
         public bool Logout()
         {
             return _authRepository.Logout();
+        }
+
+        public string GetToken(Data.Consumer consumer)
+        {
+            try
+            {
+                 return GetTokenString(consumer);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
     }
 }

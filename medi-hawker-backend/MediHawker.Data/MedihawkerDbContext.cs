@@ -18,7 +18,7 @@ namespace MediHawker.Data
         {
         }
 
-        public virtual DbSet<Consumers> Consumers{ get; set; }
+        public virtual DbSet<Consumer> Consumers{ get; set; }
         public virtual DbSet<ConsumersDetails> ConsumersDetails { get; set; }
         public virtual DbSet<ConsumersPurchaseHistory> ConConsumersPurchaseHistory { get; set; }
         public virtual DbSet<OrderDetails> ConOrderDetails { get; set; }
@@ -33,7 +33,7 @@ namespace MediHawker.Data
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
-            modelBuilder.Entity<Consumers>(entity =>
+            modelBuilder.Entity<Consumer>(entity =>
             {
                 entity.HasKey(e => e.ConsumerId)
                     .HasName("PK_Consumers");

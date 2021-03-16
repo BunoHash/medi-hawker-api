@@ -1,17 +1,18 @@
-﻿using System;
+﻿using MediHawker.Data;
+using MediHawker.Data.Custom_Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using MediHawker.Data;
-using MediHawker.Data.Custom_Models;
 
-namespace MediHawker.Services.Consumer.Interface
+namespace MediHawker.Repositories.ConsumerSpace.Interface
 {
-    public interface IConsumerService
+   public interface IConsumerRepository 
     {
         bool Save(ConsumerRegisterModel conModel);
         bool Update(ConsumerRegisterModel conModel);
         bool CheckEmail(string email);
-        
         bool CheckUsername(string username);
+
+        
     }
 }

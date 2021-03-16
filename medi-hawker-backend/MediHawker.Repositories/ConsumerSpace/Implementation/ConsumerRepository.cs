@@ -1,6 +1,6 @@
 ﻿using MediHawker.Data;
 using MediHawker.Data.Custom_Models;
-using MediHawker.Repositories.Consumer.Interface;
+using MediHawker.Repositories.ConsumerSpace.Interface;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MediHawker.Repositories.Consumer.Implementation
+namespace MediHawker.Repositories.ConsumerSpace.Implementation
 {
   public  class ConsumerRepository : IConsumerRepository
     {
